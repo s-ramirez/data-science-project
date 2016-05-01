@@ -19,13 +19,13 @@
       DataService.getClusterData().then(function(clusters){
         vm.clusters = clusters;
         angular.forEach(vm.clusters, function(value){
-          
+
         });
       });
     };
 
     vm.algorithms = [{name: 'Affinity Propagation', key: 'AffinityPropagation'}, {name: 'Average Linkage', key: 'Average Linkage'}];
-    vm.active = algorithms[0];
+    vm.active = vm.algorithms[0];
 
     vm.init();
   }
