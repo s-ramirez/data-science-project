@@ -5,7 +5,8 @@
     .module('app')
     .controller('MainController', MainController);
 
-  function MainController() {
+  MainController.$inject = ['$scope'];
+  function MainController($scope) {
     var vm = this;
 
     angular.extend($scope, {
