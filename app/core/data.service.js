@@ -10,7 +10,7 @@
   function DataService($http) {
 
     function getClusterData() {
-      return $http.get('/data/clusters.json').then(function (response) {
+      return $http.get('data/clusters.json').then(function (response) {
         return response;
       });
     }
