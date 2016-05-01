@@ -25,7 +25,7 @@
           },
           geometry: {
             type: "Point",
-            coordinates: [value.latitude, value.longitude]
+            coordinates: [value.longitude, value.latitude]
           }
         });
       });
