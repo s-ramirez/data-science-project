@@ -5,8 +5,8 @@
     .module('app')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$scope'];
-  function MainController($scope) {
+  MainController.$inject = ['$scope', 'DataService'];
+  function MainController($scope, DataService) {
     var vm = this;
 
     vm.center = {
@@ -15,5 +15,12 @@
         zoom: 10
     };
 
+    vm.init = function(){
+      DataService.getClusterData().then(function(clusters){
+        vm.clusters = clusters;
+      });
+    };
+
+    vm.init();
   }
 })();
