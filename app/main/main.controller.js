@@ -16,19 +16,20 @@
     };
     vm.geojson = [];
     vm.showClusters = function() {
-      angular.forEach(vm.clusters, function(value){
+      for(var i = 0; i < vm.clusters.length(); i++){
+        var value = vm.clusters[i];
         vm.geojson.push({
+          id: i,
           type: "Feature",
           properties: {
-            name: value.name,
-            show_on_map: true
+            name: value.name
           },
           geometry: {
             type: "Point",
             coordinates: [value.longitude, value.latitude]
           }
         });
-      });
+      }
     };
 
     vm.init = function(){
