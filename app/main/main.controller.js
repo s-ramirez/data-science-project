@@ -14,13 +14,27 @@
         lng: -82.134658,
         zoom: 10
     };
+    vm.geojson = [];
+    vm.showClusters = function() {
+      angular.forEach(vm.clusters, function(value){
+        vm.geojson.push({
+          type: "Feature",
+          properties: {
+            name: value.name,
+            show_on_map: true
+          },
+          geometry: {
+            type: "Point",
+            coordinates: [value.latitude, value.longitude]
+          }
+        });
+      });
+    };
 
     vm.init = function(){
       DataService.getClusterData().then(function(clusters){
         vm.clusters = clusters;
-        angular.forEach(vm.clusters, function(value){
-
-        });
+        vm.showClusters();
       });
     };
 
