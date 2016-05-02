@@ -30,9 +30,11 @@
           }
         });
       }
+      vm.hideMap = false;
     };
 
     vm.init = function(){
+      main.hideMap = false;
       DataService.getClusterData().then(function(clusters){
         vm.clusters = clusters;
         vm.showClusters();
