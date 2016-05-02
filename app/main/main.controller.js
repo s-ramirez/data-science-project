@@ -16,7 +16,7 @@
     };
     vm.geojson = [];
     vm.showClusters = function() {
-      for(var i = 0; i < vm.clusters.length(); i++){
+      for(var i = 0; i < vm.clusters.length; i++){
         var value = vm.clusters[i];
         vm.geojson.push({
           id: i,
