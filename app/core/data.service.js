@@ -15,8 +15,26 @@
       });
     }
 
+    function getIcons() {
+      var icons = {};
+      var opt = ['a','b','c','d', 'e', 'f', 'g', 'h','i','j','k','l','m','n','o','p','q','r','s']
+      for(var i = 0; i < opt.length-1; i++){
+        for(var j = i; j < opt.length; j++) {
+          var className = opt[i]+opt[j];
+          icons[className] = {
+            type: 'div',
+            iconSize: [10, 10],
+            className: className,
+            iconAnchor:  [5, 5]
+          };
+        }
+      }
+      return icons;
+    }
+
     return {
-      getClusterData: getClusterData
+      getClusterData: getClusterData,
+      getIcons: getIcons
     }
   }
 })();

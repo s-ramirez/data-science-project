@@ -2,31 +2,83 @@
   <div class="row">
     <div class="col-md-2">
       <ul class="nav nav-pills nav-stacked">
-        <li ng-repeat="item in main.algorithms" ng-class="{ active: item.key == main.active.key }" ng-click="main.setActive(item)">
-          <a>{{item.name}}</a>
+        <li ng-repeat="item in main.algorithms" ng-class="{ active: item.key == main.active.key }">
+          <a  ng-click="main.setActive(item, $event)" href="#">{{item.name}}</a>
         </li>
       </ul>
     </div>
     <div class="col-md-10" ng-if="!main.hideMap">
-      <leaflet center="main.center" geojson="main.geojson" width="100%" height="480px"></leaflet>
+      <leaflet lf-center="main.center" markers="main.markers" layers="main.layers" height="480px" width="100%"></leaflet>
     </div>
   </div>
   <div class="row">
     <table class="table table-striped table-hover ">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Column heading</th>
-          <th>Column heading</th>
-          <th>Column heading</th>
+          <th>Algorith</th>
+          <th>Slope</th>
+          <th>Intercept</th>
+          <th>Rvalue</th>
+          <th>Pvalue</th>
+          <th>Stderr</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Column content</td>
-          <td>Column content</td>
-          <td>Column content</td>
+          <td>Spectral Clustering</td>
+          <td>0.011266</td>
+          <td>3.470552</td>
+          <td>0.001995</td>
+          <td>0.920594</td>
+          <td>0.113004</td>
+        </tr>
+        <tr>
+          <td>Average Linkage</td>
+          <td>-0.005296</td>
+          <td>3.519255</td>
+          <td>-0.090554</td>
+          <td>0.000006</td>
+          <td>0.001165</td>
+        </tr>
+        <tr>
+        <td>Complete Linkage</td>
+        <td>-0.000913</td>
+        <td>3.482976</td>
+        <td>-0.012756</td>
+        <td>0.523786</td>
+        <td>0.001432</td>
+        </tr>
+        <tr>
+        <td>Ward Linkage</td>
+        <td>0.001037</td>
+        <td>3.437918</td>
+        <td>0.023418</td>
+        <td>0.241819</td>
+        <td>0.000886</td>
+        </tr>
+        <tr>
+        <td>DBSCAN</td>
+        <td>-0.004997</td>
+        <td>3.49399</td>
+        <td>-0.029544</td>
+        <td>0.139729</td>
+        <td>0.003383</td>
+        </tr>
+        <tr>
+        <td>Affinity Propagation</td>
+        <td>0.020781</td>
+        <td>3.42445</td>
+        <td>0.031671</td>
+        <td>0.113388</td>
+        <td>0.013122</td>
+        </tr>
+        <tr>
+        <td>KMeans</td>
+        <td>-0.000294</td>
+        <td>3.479365</td>
+        <td>-0.00774</td>
+        <td>0.698898</td>
+        <td>0.000761</td>
         </tr>
       </tbody>
     </table>
