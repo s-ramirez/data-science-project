@@ -34,7 +34,7 @@
     };
 
     vm.init = function(){
-      main.hideMap = false;
+      vm.hideMap = false;
       DataService.getClusterData().then(function(clusters){
         vm.clusters = clusters;
         vm.showClusters();
